@@ -1,0 +1,47 @@
+{
+	"name": "use-service",
+	"description": "`useService` react hook. Share a state and an API with multiple components",
+	"version": "1.0.0",
+	"main": "lib/useService.js",
+	"homepage": "https://toutpt.github.io/use-service",
+	"types": "index.d.ts",
+	"publishConfig": {
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/toutpt/use-service.git"
+	},
+	"licence": "Apache-2.0",
+	"keywords": [
+		"react",
+		"hooks",
+		"react-hooks"
+	],
+	"scripts": {
+		"predeploy": "pnpm run build",
+		"deploy": "gh-pages -d build",
+		"build": "react-scripts build",
+		"prepublishOnly": "babel -d lib ./src/useService.js",
+		"start": "react-scripts start",
+		"test": "react-scripts test"
+	},
+	"browserslist": [
+		">0.2%",
+		"not dead",
+		"not ie <= 11",
+		"not op_mini all"
+	],
+	"devDependencies": {
+		"@babel/cli": "^7.23.4",
+		"@babel/core": "^7.23.4",
+		"@babel/preset-env": "^7.23.4",
+		"gh-pages": "^3.1.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-scripts": "^5.0.1",
+		"react-test-renderer": "^17.0.0"
+	},
+	"license": "Apache-2.0",
+	"dependencies": {}
+}
