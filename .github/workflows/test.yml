@@ -1,0 +1,38 @@
+name: PR tests
+
+on:
+  pull_request:
+
+# This allows a subsequently queued workflow run to interrupt previous runs
+concurrency:
+  group: "${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}"
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  deployments: read
+  pull-requests: write # needed to write comment
+  statuses: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build and test
+
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 #v4.1.1
+
+      - name: Use Node.js
+        uses: ./.github/actions/setup-node
+
+      - name: Install
+        run: pnpm install
+
+      - name: Test
+        run: pnpm run test:ci
+
+      # - name: Jest Coverage Comment
+      #   uses: MishaKav/jest-coverage-comment@f2e8b560403c4fd8234a2b268af3c28ca91e5cc7 #1.0.24
+      #   with:
+      #     multiple-files: |
