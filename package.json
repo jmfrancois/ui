@@ -5,6 +5,7 @@
 		"pnpm": ">=8.0.0"
 	},
 	"scripts": {
+		"clean:build": "rimraf */*/build",
 		"postinstall": "pnpm recursive run --if-present build",
 		"lint": "eslint --ext js,jsx,.ts,.tsx .",
 		"test": "pnpm recursive run --if-present test"
@@ -21,7 +22,8 @@
 		"eslint-plugin-react": "^7.33.2",
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"eslint-plugin-testing-library": "^6.2.0",
-		"prettier": "^3.1.0"
+		"prettier": "^3.1.0",
+		"rimraf": "^5.0.5"
 	},
 	"dependencies": {}
 }
