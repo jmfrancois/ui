@@ -1,6 +1,6 @@
 name: "Setup nodejs"
 description: "Setup nodejs"
-author: "Talend"
+author: "Jean-Michel FRANCOIS"
 secrets:
   NPM_TOKEN:
     description: "The NPM token to use"
