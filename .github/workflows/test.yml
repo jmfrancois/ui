@@ -30,7 +30,7 @@ jobs:
         run: pnpm install
 
       - name: Test
-        run: pnpm run test:ci
+        run: pnpm run test
 
       # - name: Jest Coverage Comment
       #   uses: MishaKav/jest-coverage-comment@f2e8b560403c4fd8234a2b268af3c28ca91e5cc7 #1.0.24
