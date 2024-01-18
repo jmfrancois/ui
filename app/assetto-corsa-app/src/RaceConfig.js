@@ -1,6 +1,7 @@
-import React from 'react';
-import { IniInput } from './IniInput';
-import { getCurrentPreset } from './Preset';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React from "react";
+import { IniInput } from "./IniInput";
+import { getCurrentPreset } from "./Preset";
 
 export function RaceConfig(props) {
 	const [preset, setPreset] = React.useState(getCurrentPreset());
@@ -18,12 +19,12 @@ export function RaceConfig(props) {
 	const [iniConfig, setIniConfig] = React.useState();
 	React.useEffect(() => {
 		fetch(`/api/v1/server_cfg?preset=${preset}`)
-			.then(resp => {
+			.then((resp) => {
 				if (resp.ok) {
 					return resp.json();
 				}
 			})
-			.then(resp => {
+			.then((resp) => {
 				setIniConfig(resp);
 			});
 	}, [preset]);
@@ -32,8 +33,20 @@ export function RaceConfig(props) {
 	}
 	return (
 		<form className="text-start">
-			<IniInput preset={preset} config={iniConfig} section="QUALIFY" id="TIME" type="number" />
-			<IniInput preset={preset} config={iniConfig} section="RACE" id="LAPS" type="number" />
+			<IniInput
+				preset={preset}
+				config={iniConfig}
+				section="QUALIFY"
+				id="TIME"
+				type="number"
+			/>
+			<IniInput
+				preset={preset}
+				config={iniConfig}
+				section="RACE"
+				id="LAPS"
+				type="number"
+			/>
 		</form>
 	);
 }

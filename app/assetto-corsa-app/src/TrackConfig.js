@@ -1,6 +1,6 @@
-import React from 'react';
-import { IniInput } from './IniInput';
-import { getCurrentPreset } from './Preset';
+import React from "react";
+import { IniInput } from "./IniInput";
+import { getCurrentPreset } from "./Preset";
 
 export function TrackConfig(props) {
 	const [preset, setPreset] = React.useState(getCurrentPreset());
@@ -14,16 +14,17 @@ export function TrackConfig(props) {
 		return () => {
 			clearInterval(cancel);
 		};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 	const [iniConfig, setIniConfig] = React.useState();
 	React.useEffect(() => {
 		fetch(`/api/v1/server_cfg?preset=${preset}`)
-			.then(resp => {
+			.then((resp) => {
 				if (resp.ok) {
 					return resp.json();
 				}
 			})
-			.then(resp => {
+			.then((resp) => {
 				setIniConfig(resp);
 			});
 	}, [preset]);

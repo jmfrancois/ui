@@ -1,13 +1,14 @@
-import React from 'react';
-import { addCarInEntryList, deleteCarInEntryList, getEntryList } from './api';
-import { IniInput } from './IniInput';
-import { getCurrentPreset } from './Preset';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React from "react";
+import { addCarInEntryList, deleteCarInEntryList, getEntryList } from "./api";
+import { IniInput } from "./IniInput";
+import { getCurrentPreset } from "./Preset";
 
 export function EntryList(props) {
 	const [preset, setPreset] = React.useState(getCurrentPreset());
 	const [entryList, setEntryList] = React.useState({});
 	function refreshEntryList() {
-		getEntryList(preset).then(resp => {
+		getEntryList(preset).then((resp) => {
 			setEntryList(resp);
 		});
 	}
@@ -43,7 +44,7 @@ export function EntryList(props) {
 						</tr>
 					</thead>
 					<tbody>
-						{Object.keys(entryList).map(section => (
+						{Object.keys(entryList).map((section) => (
 							<React.Fragment key={section}>
 								<tr>
 									<td>
