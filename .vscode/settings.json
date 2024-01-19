@@ -1,0 +1,16 @@
+{
+	"prettier.prettierPath": "./node_modules/prettier/index.cjs",
+	"eslint.workingDirectories": [
+		{
+			"pattern": "app/**"
+		},
+		{
+			"pattern": "tools/**"
+		},
+		{
+			"pattern": "react/**"
+		}
+	],
+	"typescript.validate.enable": true,
+	"javascript.validate.enable": true
+}
