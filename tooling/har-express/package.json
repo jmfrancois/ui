@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/toutpt/har-express.git"
+    "url": "https://github.com/jmfrancois/ui.git"
   },
   "devDependencies": {
     "jest": "^29.7.0",
