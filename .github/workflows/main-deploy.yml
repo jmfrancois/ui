@@ -1,0 +1,37 @@
+name: main deploy
+
+on:
+  push:
+    branches:
+      - main
+
+# This allows a subsequently queued workflow run to interrupt previous runs
+concurrency:
+  group: "${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}"
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  deployments: read
+  pull-requests: write
+  statuses: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Build and test
+
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 #v4.1.1
+
+      - name: Use Node.js
+        uses: ./.github/actions/setup-node
+
+      - name: Install
+        run: pnpm install
+
+      - name: Demo
+        run: |
+          pnpm run predeploy
+          pnpm run deploy

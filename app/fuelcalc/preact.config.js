@@ -4,7 +4,7 @@ export default (config) => {
 		config.output.publicPath = "/fuelcalc";
 	} else {
 		console.log("### / dir");
-		config.output.publicPath = "/";
+		config.output.publicPath = "/ui/fuelcalc";
 	}
 	return config;
 };
