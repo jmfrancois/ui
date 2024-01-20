@@ -1,0 +1,48 @@
+:root {
+	--color-txt-neutral: #222;
+	--color-bg-neutral: #eee;
+	--color-link-neutral: #0366d6;
+	--color-link-hover-neutral: #0366d6;
+}
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-bg-neutral: #222;
+		--color-txt-neutral: #eee;
+	}
+}
+* {
+	color: var(--color-txt-neutral);
+	background-color: var(--color-bg-neutral);
+}
+body {
+	margin: 0 auto;
+	max-width: 800px;
+}
+a,
+a:visited {
+	color: var(--color-link-neutral);
+}
+a:hover {
+	color: var(--color-link-hover-neutral);
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	/* align-items: center; */
+	padding: 1rem;
+	border-bottom: 1px solid #ccc;
+	height: 2rem;
+}
+header > a {
+	text-decoration: none;
+	display: block;
+	font-size: 1rem;
+}
+.circle {
+	border-radius: 50%;
+}
+.flex-horizontal {
+	display: flex;
+	justify-content: space-between;
+}
