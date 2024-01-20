@@ -1,0 +1,13 @@
+{
+	"name": "@jmfrancois/homepage",
+	"private": true,
+	"version": "1.0.0",
+	"scripts": {
+		"dev": "ts-node serve.ts"
+	},
+	"devDependencies": {
+		"@types/node": "^20.11.5",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.3.3"
+	}
+}

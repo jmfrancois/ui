@@ -1,0 +1,77 @@
+:root {
+	--color-txt-neutral: #333;
+	--color-bg-neutral: #eee;
+	--color-bg-neutral-strong: #fff;
+	--color-link-neutral: #0366d6;
+	--color-link-hover-neutral: #0366d6;
+}
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-bg-neutral-strong: #000;
+		--color-bg-neutral: #222;
+		--color-txt-neutral: #eee;
+	}
+}
+* {
+	color: var(--color-txt-neutral);
+	background-color: var(--color-bg-neutral);
+	font-family: Roboto;
+}
+html {
+	font-size: 14px;
+	background-color: var(--color-bg-neutral-strong);
+}
+body {
+	margin: 0 auto;
+	max-width: 800px;
+	padding: 1rem;
+	height: 100vh;
+}
+a,
+a:visited {
+	color: var(--color-link-neutral);
+}
+a:hover {
+	color: var(--color-link-hover-neutral);
+}
+.link {
+	font-size: 1.2rem;
+	line-height: 2rem;
+}
+header {
+	display: flex;
+	justify-content: space-between;
+	/* align-items: center; */
+	padding: 1rem;
+	border-bottom: 1px solid #ccc;
+	height: 2rem;
+}
+header > a {
+	text-decoration: none;
+	display: block;
+	font-size: 1rem;
+	color: var(--color-txt-neutral);
+}
+.circle {
+	border-radius: 50%;
+}
+
+main {
+	height: calc(100vh - 2rem);
+	overflow: scroll;
+}
+.flex {
+	display: flex;
+	justify-content: space-between;
+}
+.flex > div {
+	flex: 1;
+}
+@media (max-width: 600px) {
+	.flex {
+		flex-direction: column;
+	}
+	.flex > div {
+		flex: none;
+	}
+}
