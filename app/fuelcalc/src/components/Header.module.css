@@ -4,7 +4,10 @@
 	padding: 0;
 	background: #ff2800;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-	z-index: 50;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	overflow: auto;
 }
 
 .header h1 {

@@ -1,5 +1,5 @@
 :root {
-	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	font-family: "Roboto", sans-serif;
 	line-height: 1.5;
 	font-weight: 400;
 
@@ -13,14 +13,23 @@
 	-webkit-text-size-adjust: 100%;
 }
 
-@media screen and (prefer-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
 	:root {
 		--color-text: #ccc;
 		--color-bg: #1a1a1a;
 	}
 }
 
+* {
+	margin: 0;
+	padding: 0;
+	color: var(--color-text);
+}
+
 body {
+	color: var(--color-text);
+	background-color: var(--color-bg);
+
 	background-image: url(https://live.staticflickr.com/4844/45573295934_555c082cb2_k.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -32,17 +41,18 @@ body {
 	justify-content: flex-start;
 	align-items: center;
 	min-height: 100vh;
-	color: var(--color-text);
-	background-color: var(--color-bg);
 }
 
 #app {
-	width: 100%;
 	max-width: 960px;
 	padding-right: 15px;
 	padding-left: 15px;
 	margin-right: auto;
 	margin-left: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100vh;
 }
 
 @media (min-width: 576px) {

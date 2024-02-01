@@ -1,4 +1,5 @@
 import { useState, useEffect } from "preact/hooks";
+
 import style from "./Form.module.css";
 
 class State {
@@ -8,11 +9,11 @@ class State {
 	literPerLap: number;
 	maxTank: number;
 	onChange: () => void;
-	laps: number;
-	litersTotal: number;
-	pitstopRequired: number;
-	possibleLapsOnTank: number;
-	setState: State;
+	laps?: number;
+	litersTotal?: number;
+	pitstopRequired?: number;
+	possibleLapsOnTank?: number;
+	setState?: State;
 
 	constructor(prev?: State) {
 		this.laptimeM = 2;
@@ -69,7 +70,7 @@ function useCalc() {
 	return state;
 }
 
-function format(n) {
+function format(n: number) {
 	return Math.floor(n);
 }
 
