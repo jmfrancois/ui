@@ -1,14 +1,10 @@
-import style from "./Header.module.css";
-
 export const Header = () => (
-	<header
-		class={`${style.header} shadow flex flex-row justify-between overflow-auto bg-accent-400 h-12`}
-	>
-		<h1 className="text-3xl font-bold px-4 my-auto leading-10">
+	<header className="bg-accent-400 flex h-12 flex-row justify-between overflow-auto shadow">
+		<h1 className="my-auto px-4 text-3xl font-bold leading-10">
 			Fuel Calculator
 		</h1>
-		<nav class="leading-10 my-auto px-4 flex">
-			<a href="../" class="block hover:bg-accent-600">
+		<nav class="my-auto flex px-4 leading-10">
+			<a href="../" class="hover:bg-accent-600 block">
 				Home
 			</a>
 		</nav>
