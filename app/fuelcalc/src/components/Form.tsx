@@ -1,7 +1,5 @@
 import { useState, useEffect } from "preact/hooks";
 
-import style from "./Form.module.css";
-
 class State {
 	laptimeM: number;
 	laptimeS: number;
@@ -82,21 +80,24 @@ function onChange(event, state) {
 export const Calc = () => {
 	const state = useCalc();
 	return (
-		<form class={style.form}>
-			<div class={style.col}>
-				<div class={style["form-group"]}>
-					<label>Lap time (minutes / seconds)</label>
-					<div class={style.formRow}>
+		<form className="max-w  grid grid-cols-1 gap-2 bg-neutral-200/75 px-2 sm:grid-cols-2 dark:bg-neutral-800/75">
+			<div className="">
+				<div className="">
+					<label className="text-m mb-2 block font-medium text-gray-900 dark:text-white">
+						Lap time (minutes / seconds)
+					</label>
+					<div className="mb-2 grid grid-cols-2 gap-2">
 						<input
 							type="number"
-							class={style["form-control"]}
+							className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
 							value={state.laptimeM}
+							autoFocus
 							name="laptimeM"
 							onChange={(e) => onChange(e, state)}
 						/>
 						<input
 							type="number"
-							class={style["form-control"]}
+							className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
 							value={state.laptimeS}
 							name="laptimeS"
 							onChange={(e) => onChange(e, state)}
@@ -104,70 +105,84 @@ export const Calc = () => {
 					</div>
 				</div>
 
-				<div class={style["form-group"]}>
-					<label>Race length (minutes)</label>
+				<div className="mb-2 flex flex-col">
+					<label className="text-m mb-2 block font-medium text-gray-900 dark:text-white">
+						Race length (minutes)
+					</label>
 					<input
 						type="number"
-						class={style["form-control"]}
+						className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
 						value={state.raceLength}
 						name="raceLength"
 						onChange={(e) => onChange(e, state)}
 					/>
 				</div>
-				<div class={style["form-group"]}>
-					<label>Consumption (liters/lap)</label>
+				<div className="mb-2 flex flex-col">
+					<label className="text-m mb-2 block font-medium text-gray-900 dark:text-white">
+						Consumption (liters/lap)
+					</label>
 					<input
 						type="number"
-						class={style["form-control"]}
+						className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
 						value={state.literPerLap}
 						name="literPerLap"
 						onChange={(e) => onChange(e, state)}
 					/>
 				</div>
-				<div class={style["form-group"]}>
-					<label>Max tank capacity (liters)</label>
+				<div className="mb-2 flex flex-col">
+					<label className="text-m mb-2 block font-medium text-gray-900 dark:text-white">
+						Max tank capacity (liters)
+					</label>
 					<input
 						type="number"
-						class={style["form-control"]}
+						className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
 						value={state.maxTank}
 						name="maxTank"
 						onChange={(e) => onChange(e, state)}
 					/>
 				</div>
 			</div>
-			<div class={style.col}>
-				<div class={style["form-group"]}>
-					<label>Total fuel needed (liters)</label>
+			<div className="">
+				<div className="mb-2 flex flex-col">
+					<label className="text-m mb-2 block font-medium text-gray-900 dark:text-white">
+						Total fuel needed (liters)
+					</label>
 					<input
 						type="number"
-						class={style["form-control"]}
+						className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
 						value={format(state.litersTotal)}
 						readOnly
 					/>
 				</div>
-				<div class={style["form-group"]}>
-					<label>Total Laps (with formation lap)</label>
+				<div className="mb-2 flex flex-col">
+					<label className="text-m mb-2 block font-medium text-gray-900 dark:text-white">
+						Total Laps (with formation lap)
+					</label>
 					<input
 						type="number"
-						class={style["form-control"]}
+						className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
 						value={format(state.laps)}
 						readOnly
 					/>
 				</div>
-				<div class={style["form-group"]}>
-					<label>Number of pit stop required</label>
+				<div className="mb-2 flex flex-col">
+					<label className="text-m mb-2 block font-medium text-gray-900 dark:text-white">
+						Number of pit stop required
+					</label>
 					<input
 						type="number"
-						class={style["form-control"]}
+						className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
 						value={format(state.pitstopRequired)}
 						readOnly
 					/>
 				</div>
-				<div class={style["form-group"]}>
-					<label>Possible laps on tank</label>
+				<div className="mb-2 flex flex-col">
+					<label className="text-m mb-2 block font-medium text-gray-900 dark:text-white">
+						Possible laps on tank
+					</label>
 					<input
 						type="number"
-						class={style["form-control"]}
+						className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
 						value={format(state.possibleLapsOnTank)}
 						readOnly
 					/>

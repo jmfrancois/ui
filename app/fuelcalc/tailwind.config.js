@@ -20,6 +20,7 @@ export default {
 		colors: {
 			accent: "#ff2800",
 			neutral: colors.gray,
+			red: colors.red,
 		},
 	},
 	plugins: [],

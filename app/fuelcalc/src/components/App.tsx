@@ -6,7 +6,7 @@ import style from "./App.module.css";
 export function App() {
 	return (
 		<>
-			<div className={style.container}>
+			<div className="">
 				<Header />
 				<Calc />
 			</div>
