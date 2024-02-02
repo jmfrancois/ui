@@ -4,7 +4,7 @@ import { addCarInEntryList, deleteCarInEntryList, getEntryList } from './api'
 import { IniInput } from './IniInput'
 import { getCurrentPreset } from './Preset'
 
-export function EntryList(props) {
+export function EntryList() {
 	const [preset, setPreset] = React.useState(getCurrentPreset())
 	const [entryList, setEntryList] = React.useState({})
 	function refreshEntryList() {

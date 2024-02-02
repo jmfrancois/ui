@@ -2,7 +2,7 @@ import React from 'react'
 import { IniInput } from './IniInput'
 import { getCurrentPreset } from './Preset'
 
-export function TrackConfig(props) {
+export function TrackConfig() {
 	const [preset, setPreset] = React.useState(getCurrentPreset())
 	React.useEffect(() => {
 		const cancel = setInterval(() => {

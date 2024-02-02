@@ -3,7 +3,7 @@ import React from 'react'
 import { IniInput } from './IniInput'
 import { getCurrentPreset } from './Preset'
 
-export function RaceConfig(props) {
+export function RaceConfig() {
 	const [preset, setPreset] = React.useState(getCurrentPreset())
 	React.useEffect(() => {
 		const cancel = setInterval(() => {

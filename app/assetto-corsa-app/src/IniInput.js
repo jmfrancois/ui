@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import DATA from './data.json'
 import styles from './IniInput.module.css'
 
@@ -76,7 +77,7 @@ export function IniInput(props) {
 				{dirty &&
 					getProposal(props.config[props.section], props.id, value).map(
 						(proposal) => (
-							<li>
+							<li key={proposal}>
 								<a
 									className="dropdown-item"
 									href={`#/proposal/${proposal}`}
@@ -107,4 +108,17 @@ export function IniInput(props) {
 IniInput.defaultProps = {
 	type: 'text',
 	iniFile: 'server_cfg'
+}
+
+IniInput.propTypes = {
+	hideLabel: PropTypes.bool,
+	preset: PropTypes.string.isRequired,
+	config: PropTypes.object.isRequired,
+	section: PropTypes.string.isRequired,
+	id: PropTypes.string.isRequired,
+	name: PropTypes.string,
+	helpText: PropTypes.string,
+	type: PropTypes.string,
+	iniFile: PropTypes.string,
+	onChange: PropTypes.func
 }

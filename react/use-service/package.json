@@ -21,7 +21,8 @@
 	"scripts": {
 		"predeploy": "react-scripts build && mv build demo",
 		"build": "babel -d lib ./src/useService.js",
-		"start": "react-scripts start",
+		"dev": "react-scripts start",
+		"lint": "eslint --ext .js,.jsx,.ts,.tsx .",
 		"test": "react-scripts test"
 	},
 	"browserslist": [
@@ -33,6 +34,8 @@
 		"@babel/cli": "^7.23.4",
 		"@babel/core": "^7.23.4",
 		"@babel/preset-env": "^7.23.4",
+		"@jmfrancois/eslint-config": "workspace:*",
+		"eslint": "^8.56.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-scripts": "^5.0.1",
