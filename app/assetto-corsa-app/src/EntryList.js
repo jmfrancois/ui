@@ -1,36 +1,36 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React from "react";
-import { addCarInEntryList, deleteCarInEntryList, getEntryList } from "./api";
-import { IniInput } from "./IniInput";
-import { getCurrentPreset } from "./Preset";
+import React from 'react'
+import { addCarInEntryList, deleteCarInEntryList, getEntryList } from './api'
+import { IniInput } from './IniInput'
+import { getCurrentPreset } from './Preset'
 
 export function EntryList(props) {
-	const [preset, setPreset] = React.useState(getCurrentPreset());
-	const [entryList, setEntryList] = React.useState({});
+	const [preset, setPreset] = React.useState(getCurrentPreset())
+	const [entryList, setEntryList] = React.useState({})
 	function refreshEntryList() {
 		getEntryList(preset).then((resp) => {
-			setEntryList(resp);
-		});
+			setEntryList(resp)
+		})
 	}
 	React.useEffect(() => {
 		const cancel = setInterval(() => {
-			const newPreset = getCurrentPreset();
+			const newPreset = getCurrentPreset()
 			if (preset !== newPreset) {
-				setPreset(newPreset);
+				setPreset(newPreset)
 			}
-		}, 200);
-		refreshEntryList();
+		}, 200)
+		refreshEntryList()
 		return () => {
-			clearInterval(cancel);
-		};
-	}, []);
+			clearInterval(cancel)
+		}
+	}, [])
 
 	function onAdd() {
-		addCarInEntryList(entryList, preset).finally(() => refreshEntryList());
+		addCarInEntryList(entryList, preset).finally(() => refreshEntryList())
 	}
 
 	function onDelete(section) {
-		deleteCarInEntryList(section, preset).finally(() => refreshEntryList());
+		deleteCarInEntryList(section, preset).finally(() => refreshEntryList())
 	}
 	return (
 		<>
@@ -66,7 +66,7 @@ export function EntryList(props) {
 											id="MODEL"
 											hideLabel
 											onChange={() => {
-												refreshEntryList();
+												refreshEntryList()
 											}}
 										/>
 									</td>
@@ -90,7 +90,7 @@ export function EntryList(props) {
 									type="button"
 									className="btn btn-primary"
 									onClick={() => {
-										onAdd();
+										onAdd()
 									}}
 								>
 									Add
@@ -103,5 +103,5 @@ export function EntryList(props) {
 				</table>
 			</form>
 		</>
-	);
+	)
 }

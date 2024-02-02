@@ -1,11 +1,11 @@
-name: "Setup nodejs"
-description: "Setup nodejs"
-author: "Jean-Michel FRANCOIS"
+name: 'Setup nodejs'
+description: 'Setup nodejs'
+author: 'Jean-Michel FRANCOIS'
 secrets:
   NPM_TOKEN:
-    description: "The NPM token to use"
+    description: 'The NPM token to use'
 runs:
-  using: "composite"
+  using: 'composite'
   steps:
     - uses: pnpm/action-setup@v2
       with:
@@ -14,6 +14,6 @@ runs:
     - name: Set up Node.js
       uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d #v3.8.1
       with:
-        node-version-file: ".tool-versions"
-        registry-url: "https://registry.npmjs.org/"
-        cache: "pnpm"
+        node-version-file: '.tool-versions'
+        registry-url: 'https://registry.npmjs.org/'
+        cache: 'pnpm'

@@ -30,7 +30,7 @@ you have two options:
 function $foo() {}
 
 // app.js
-registerService('$foo', $foo);
+registerService('$foo', $foo)
 ```
 
 or
@@ -38,10 +38,10 @@ or
 ```javascript
 // foo.js
 function $foo() {}
-$foo.id = '$foo';
+$foo.id = '$foo'
 
 // app.js
-registerService($foo);
+registerService($foo)
 ```
 
 ### **useService**(id, options) -> service instance
@@ -54,43 +54,44 @@ In the following example we build a service able to fetch with abort API.
 The state management is done by hand to show a real world example.
 
 ```typescript
-
 export class $bar {
-    public static $id = '$bar';
-    public isLoading: boolean = true;
-    public error: Error | null = null;
-    private controller: AbortController | null = null;
-    public data: any // up to you
+	public static $id = '$bar'
+	public isLoading: boolean = true
+	public error: Error | null = null
+	private controller: AbortController | null = null
+	public data: any // up to you
 
-    constructor(private $apply:any) {
-    }
+	constructor(private $apply: any) {}
 
-    private reset() {
-        this.isLoading = true;
-        this.error = null;
-        this.$apply();
-    }
+	private reset() {
+		this.isLoading = true
+		this.error = null
+		this.$apply()
+	}
 
-    abort() {
-        if (this.controller) {
-            this.controller.abort();
-        }
-    }
+	abort() {
+		if (this.controller) {
+			this.controller.abort()
+		}
+	}
 
-    fetchMe(){
-        this.reset();
-        this.controller = new AbortController();
-        return fetch('/api/bar', { signal: this.controller.signal }).then(data => {
-            this.data = data;
-        }).catch(e => {
-            if (e.name !== 'AbortError') {
-                this.error = e;
-            }
-        }).finally(() => {
-            this.isLoading = false;
-            this.$apply();
-        });
-    }
+	fetchMe() {
+		this.reset()
+		this.controller = new AbortController()
+		return fetch('/api/bar', { signal: this.controller.signal })
+			.then((data) => {
+				this.data = data
+			})
+			.catch((e) => {
+				if (e.name !== 'AbortError') {
+					this.error = e
+				}
+			})
+			.finally(() => {
+				this.isLoading = false
+				this.$apply()
+			})
+	}
 }
 ```
 

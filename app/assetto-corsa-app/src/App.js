@@ -1,13 +1,13 @@
-import './App.css';
-import { EntryList } from './EntryList';
-import { Preset } from './Preset';
-import { RaceConfig } from './RaceConfig';
-import { TrackConfig } from './TrackConfig';
-import { ServerStatus } from './ServerStatus';
+import './App.css'
+import { EntryList } from './EntryList'
+import { Preset } from './Preset'
+import { RaceConfig } from './RaceConfig'
+import { TrackConfig } from './TrackConfig'
+import { ServerStatus } from './ServerStatus'
 
 function App() {
 	return (
-		<div className="container app text-center">
+		<div className="app container text-center">
 			<div className="row main">
 				<h1>Welcome to assetto corsa server manager</h1>
 				<div className="col">
@@ -28,7 +28,7 @@ function App() {
 				<EntryList />
 			</div>
 		</div>
-	);
+	)
 }
 
-export default App;
+export default App

@@ -1,46 +1,46 @@
-import React from 'react';
+import React from 'react'
 
 export function ServerStatus(props) {
-	const [status, setStatus] = React.useState(false);
-	const [ips, setIps] = React.useState([]);
+	const [status, setStatus] = React.useState(false)
+	const [ips, setIps] = React.useState([])
 	const refreshStatus = () => {
 		fetch('/api/v1/server/status')
-			.then(resp => {
+			.then((resp) => {
 				if (resp.ok) {
-					return resp.json();
+					return resp.json()
 				}
 			})
-			.then(resp => {
-				setStatus(resp);
-			});
-	};
+			.then((resp) => {
+				setStatus(resp)
+			})
+	}
 	React.useEffect(() => {
 		fetch('/api/v1/ip')
-			.then(resp => {
+			.then((resp) => {
 				if (resp.ok) {
-					return resp.json();
+					return resp.json()
 				}
 			})
-			.then(resp => {
-				setIps(resp);
-			});
-		refreshStatus();
-	}, []);
+			.then((resp) => {
+				setIps(resp)
+			})
+		refreshStatus()
+	}, [])
 	const start = () => {
 		fetch('/api/v1/server/start', { method: 'POST' }).then(() => {
-			refreshStatus();
-		});
-	};
+			refreshStatus()
+		})
+	}
 	const stop = () => {
 		fetch('/api/v1/server/stop', { method: 'POST' }).then(() => {
-			refreshStatus();
-		});
-	};
-	const message = status?.pid ? 'Running' : 'Stopped';
+			refreshStatus()
+		})
+	}
+	const message = status?.pid ? 'Running' : 'Stopped'
 	return (
 		<div className="text-start">
 			<ul>
-				{Object.keys(ips).map(ip => (
+				{Object.keys(ips).map((ip) => (
 					<li key={ip}>
 						<a
 							target="content-manager"
@@ -71,5 +71,5 @@ export function ServerStatus(props) {
 				Stop
 			</button>
 		</div>
-	);
+	)
 }

@@ -1,16 +1,15 @@
-import { Calc } from "./Form";
-import { Header } from "./Header";
-import { Footer } from "./Footer";
-import style from "./App.module.css";
+import { Calc } from './Form'
+import { Header } from './Header'
+import { Footer } from './Footer'
 
 export function App() {
 	return (
 		<>
-			<div className={style.container}>
+			<div className="">
 				<Header />
 				<Calc />
 			</div>
 			<Footer />
 		</>
-	);
+	)
 }

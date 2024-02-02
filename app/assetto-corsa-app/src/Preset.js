@@ -1,30 +1,30 @@
-import React from 'react';
-import { DEFAULT_PRESET } from './constants';
+import React from 'react'
+import { DEFAULT_PRESET } from './constants'
 
-const STORAGE_KEY = 'currentPreset';
+const STORAGE_KEY = 'currentPreset'
 
 export function getCurrentPreset() {
-	return sessionStorage.getItem(STORAGE_KEY) || DEFAULT_PRESET;
+	return sessionStorage.getItem(STORAGE_KEY) || DEFAULT_PRESET
 }
 
 export function Preset(props) {
-	const [presets, setPresets] = React.useState([]);
+	const [presets, setPresets] = React.useState([])
 	React.useEffect(() => {
 		fetch('/api/v1/preset')
-			.then(resp => {
+			.then((resp) => {
 				if (resp.ok) {
-					return resp.json();
+					return resp.json()
 				} else {
-					return Promise.resolve([]);
+					return Promise.resolve([])
 				}
 			})
-			.then(resp => {
-				setPresets(resp);
-			});
-	}, []);
-	const currentPreset = getCurrentPreset();
+			.then((resp) => {
+				setPresets(resp)
+			})
+	}, [])
+	const currentPreset = getCurrentPreset()
 	function onPresetChange(e) {
-		sessionStorage.setItem(STORAGE_KEY, e.target.value);
+		sessionStorage.setItem(STORAGE_KEY, e.target.value)
 	}
 	return (
 		<form className="text-start">
@@ -38,14 +38,15 @@ export function Preset(props) {
 					onChange={onPresetChange}
 					value={currentPreset}
 				>
-					{presets.map(preset => (
+					{presets.map((preset) => (
 						<option key={preset}>{preset}</option>
 					))}
 				</select>
 				<div id="presetHelp" className="form-text">
-					The configuration preset help you to switch from one configuration to an other
+					The configuration preset help you to switch from one configuration to
+					an other
 				</div>
 			</div>
 		</form>
-	);
+	)
 }
