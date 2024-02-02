@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function ServerStatus(props) {
+export function ServerStatus() {
 	const [status, setStatus] = React.useState(false)
 	const [ips, setIps] = React.useState([])
 	const refreshStatus = () => {

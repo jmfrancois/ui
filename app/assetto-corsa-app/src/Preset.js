@@ -7,7 +7,7 @@ export function getCurrentPreset() {
 	return sessionStorage.getItem(STORAGE_KEY) || DEFAULT_PRESET
 }
 
-export function Preset(props) {
+export function Preset() {
 	const [presets, setPresets] = React.useState([])
 	React.useEffect(() => {
 		fetch('/api/v1/preset')
