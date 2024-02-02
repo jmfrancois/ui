@@ -1,1 +1,1 @@
-export const DEFAULT_PRESET = 'CURRENT';
+export const DEFAULT_PRESET = 'CURRENT'

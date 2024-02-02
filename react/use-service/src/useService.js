@@ -1,23 +1,23 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 
-const factories = new Map(); // hold a function service
-const services = new Map(); // hold an instance of a function service
-const notifies = new Map(); // hold setState of component which use a service
+const factories = new Map() // hold a function service
+const services = new Map() // hold an instance of a function service
+const notifies = new Map() // hold setState of component which use a service
 
 function initService(id) {
-	let instance = services.get(id);
+	let instance = services.get(id)
 	if (!instance) {
 		const notify = () => {
-			(notifies.get(id) || []).forEach((callMe) =>
-				callMe(Object.assign({}, services.get(id))),
-			);
-		};
+			;(notifies.get(id) || []).forEach((callMe) =>
+				callMe(Object.assign({}, services.get(id)))
+			)
+		}
 		// this will call every setState to update each components
-		const factory = factories.get(id);
-		instance = new factory.fn(notify, ...factory.dependencies.map(initService));
-		services.set(id, instance);
+		const factory = factories.get(id)
+		instance = new factory.fn(notify, ...factory.dependencies.map(initService))
+		services.set(id, instance)
 	}
-	return instance;
+	return instance
 }
 
 /**
@@ -27,22 +27,22 @@ function initService(id) {
  * @param {boolean} options.subscribe - set to false to not be notified of updates
  */
 export function useService(id, options = { subscribe: true }) {
-	const [, setState] = useState(services.get(id));
+	const [, setState] = useState(services.get(id))
 	useEffect(() => {
 		return function cleanup() {
 			if (notifies.get(id).has(setState)) {
-				notifies.get(id).delete(setState);
+				notifies.get(id).delete(setState)
 			}
-		};
-	}, [id]);
+		}
+	}, [id])
 	if (options.subscribe) {
 		if (notifies.get(id) === undefined) {
-			notifies.set(id, new Set([setState]));
+			notifies.set(id, new Set([setState]))
 		} else if (!notifies.get(id).has(setState)) {
-			notifies.get(id).add(setState);
+			notifies.get(id).add(setState)
 		}
 	}
-	return initService(id);
+	return initService(id)
 }
 
 /**
@@ -51,19 +51,19 @@ export function useService(id, options = { subscribe: true }) {
  * @param {function} value - the function constructor of the service
  */
 export function registerService(idOrFn, value) {
-	let id = idOrFn;
-	let fn = value;
+	let id = idOrFn
+	let fn = value
 	if (!value) {
-		id = idOrFn.$id;
-		fn = idOrFn;
+		id = idOrFn.$id
+		fn = idOrFn
 	}
 	if (factories.get(id)) {
-		throw new Error(`A service is already registred under the key ${id}`);
+		throw new Error(`A service is already registred under the key ${id}`)
 	} else {
 		factories.set(id, {
 			fn,
-			dependencies: fn.dependencies || [],
-		});
+			dependencies: fn.dependencies || []
+		})
 	}
 }
 
@@ -72,5 +72,5 @@ export function registerService(idOrFn, value) {
  * @param {string} id - the id of the service you want
  */
 export function getService(id) {
-	return services.get(id);
+	return services.get(id)
 }

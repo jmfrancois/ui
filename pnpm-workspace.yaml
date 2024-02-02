@@ -1,4 +1,4 @@
 packages:
-  - "tooling/*"
-  - "react/*"
-  - "app/*"
+  - 'tooling/*'
+  - 'react/*'
+  - 'app/*'

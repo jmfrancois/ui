@@ -3,10 +3,10 @@ export const Header = () => (
 		<h1 className="my-auto px-4 text-3xl font-bold leading-10">
 			Fuel Calculator
 		</h1>
-		<nav class="my-auto flex px-4 leading-10">
-			<a href="../" class="hover:bg-accent-600 block">
+		<nav className="my-auto flex px-4 leading-10">
+			<a href="../" className="hover:bg-accent-600 block">
 				Home
 			</a>
 		</nav>
 	</header>
-);
+)

@@ -1,84 +1,84 @@
-import { useState, useEffect } from "preact/hooks";
+import { useState, useEffect } from 'preact/hooks'
 
 class State {
-	laptimeM: number;
-	laptimeS: number;
-	raceLength: number;
-	literPerLap: number;
-	maxTank: number;
-	onChange: () => void;
-	laps?: number;
-	litersTotal?: number;
-	pitstopRequired?: number;
-	possibleLapsOnTank?: number;
-	setState?: State;
+	laptimeM: number
+	laptimeS: number
+	raceLength: number
+	literPerLap: number
+	maxTank: number
+	onChange: () => void
+	laps?: number
+	litersTotal?: number
+	pitstopRequired?: number
+	possibleLapsOnTank?: number
+	setState?: State
 
 	constructor(prev?: State) {
-		this.laptimeM = 2;
-		this.laptimeS = 10;
-		this.raceLength = 20; //minutes
-		this.literPerLap = 2.6;
-		this.maxTank = 105; // capacity
-		this.onChange = () => {};
+		this.laptimeM = 2
+		this.laptimeS = 10
+		this.raceLength = 20 //minutes
+		this.literPerLap = 2.6
+		this.maxTank = 105 // capacity
+		this.onChange = () => {}
 		if (prev) {
-			this.setState = prev.setState;
-			this.laptimeM = prev.laptimeM;
-			this.laptimeS = prev.laptimeS;
-			this.raceLength = prev.raceLength;
-			this.literPerLap = prev.literPerLap;
-			this.maxTank = prev.maxTank;
-			this.onChange = prev.onChange;
+			this.setState = prev.setState
+			this.laptimeM = prev.laptimeM
+			this.laptimeS = prev.laptimeS
+			this.raceLength = prev.raceLength
+			this.literPerLap = prev.literPerLap
+			this.maxTank = prev.maxTank
+			this.onChange = prev.onChange
 		}
 
-		this.compute();
+		this.compute()
 	}
 
 	set(attr, value) {
-		let v = value;
-		if (typeof value === "string") {
-			if (value.indexOf(".") !== -1) {
-				v = parseFloat(value);
+		let v = value
+		if (typeof value === 'string') {
+			if (value.indexOf('.') !== -1) {
+				v = parseFloat(value)
 			} else {
-				v = parseInt(value, 10);
+				v = parseInt(value, 10)
 			}
 		}
-		console.log(`set attr ${attr} ${value} => ${v}`);
+		console.log(`set attr ${attr} ${value} => ${v}`)
 		if (!isNaN(v)) {
-			this[attr] = v;
-			this.compute();
-			this.onChange();
+			this[attr] = v
+			this.compute()
+			this.onChange()
 		} else {
-			console.error(`Try to set ${attr} to a value which is not a number`);
+			console.error(`Try to set ${attr} to a value which is not a number`)
 		}
 	}
 	compute() {
 		this.laps =
-			(this.raceLength * 60) / (this.laptimeM * 60 + this.laptimeS + 0.5) + 1;
-		this.litersTotal = this.laps * this.literPerLap + 1.5;
-		this.pitstopRequired = this.litersTotal / this.maxTank;
-		this.possibleLapsOnTank = this.maxTank / this.literPerLap - 0.5;
+			(this.raceLength * 60) / (this.laptimeM * 60 + this.laptimeS + 0.5) + 1
+		this.litersTotal = this.laps * this.literPerLap + 1.5
+		this.pitstopRequired = this.litersTotal / this.maxTank
+		this.possibleLapsOnTank = this.maxTank / this.literPerLap - 0.5
 	}
 }
 
 function useCalc() {
-	const [state, setState] = useState<State>(new State());
+	const [state, setState] = useState<State>(new State())
 	useEffect(() => {
-		state.onChange = () => setState(new State(state));
-	}, [state]);
-	return state;
+		state.onChange = () => setState(new State(state))
+	}, [state])
+	return state
 }
 
 function format(n: number) {
-	return Math.floor(n);
+	return Math.floor(n)
 }
 
 function onChange(event, state) {
-	console.log(state);
-	state.set(event.target.name, event.target.value);
+	console.log(state)
+	state.set(event.target.name, event.target.value)
 }
 
 export const Calc = () => {
-	const state = useCalc();
+	const state = useCalc()
 	return (
 		<form className="max-w  grid grid-cols-1 gap-2 bg-neutral-200/75 px-2 sm:grid-cols-2 dark:bg-neutral-800/75">
 			<div className="">
@@ -189,5 +189,5 @@ export const Calc = () => {
 				</div>
 			</div>
 		</form>
-	);
-};
+	)
+}

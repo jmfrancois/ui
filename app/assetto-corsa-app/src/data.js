@@ -1,3 +1,3 @@
-import data from './data.json';
+import data from './data.json'
 
-export const SKINS = data.skins;
+export const SKINS = data.skins

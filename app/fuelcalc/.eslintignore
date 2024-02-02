@@ -1,7 +1,5 @@
 node_modules
-build
 dist
 coverage
 public
-lib
 *.d.ts

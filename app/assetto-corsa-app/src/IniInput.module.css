@@ -1,14 +1,14 @@
 .wrapper {
-    position: relative;
+	position: relative;
 }
 .suggestions {
-    position: absolute;
-    background-color: white;
-    list-style-type: none;
-    z-index: 1;
-    box-shadow: 2px 2px 2px grey;
-    padding-left: 0;
+	position: absolute;
+	background-color: white;
+	list-style-type: none;
+	z-index: 1;
+	box-shadow: 2px 2px 2px grey;
+	padding-left: 0;
 }
 .suggestions :global(.dropdown-item) {
-    margin: 10px 20px;
+	margin: 10px 20px;
 }
