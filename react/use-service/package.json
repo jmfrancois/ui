@@ -3,8 +3,8 @@
   "description": "`useService` react hook. Share a state and an API with multiple components",
   "version": "2.0.0",
   "main": "lib/useService.js",
+  "types": "lib/useService.d.ts",
   "homepage": "https://jmfrancois.github.io/ui/use-service",
-  "types": "index.d.ts",
   "publishConfig": {
     "access": "public"
   },
@@ -20,10 +20,13 @@
   ],
   "scripts": {
     "predeploy": "vite build --outDir demo --base /ui/use-service",
-    "build": "tsc",
+    "build": "tsc --project tsconfig.build.json",
     "dev": "vite dev",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "test": "jest"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
   },
   "devDependencies": {
     "@jmfrancois/eslint-config": "workspace:*",
