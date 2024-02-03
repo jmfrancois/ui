@@ -3,5 +3,15 @@
 	"useTabs": true,
 	"semi": false,
 	"trailingComma": "none",
-	"singleQuote": true
+	"singleQuote": true,
+	"overrides": [
+		{
+			"files": "*.json",
+			"options": {
+				"useTabs": false,
+				"singleQuote": false,
+				"tabWidth": 2
+			}
+		}
+	]
 }

@@ -1,28 +1,28 @@
 {
-	"name": "jmfrancois",
-	"private": true,
-	"engines": {
-		"pnpm": ">=8.0.0"
-	},
-	"scripts": {
-		"clean:build": "rimraf */*/build",
-		"postinstall": "pnpm recursive run --if-present build",
-		"lint": "pnpm recursive run --if-present lint",
-		"test": "pnpm recursive run --if-present test",
-		"predeploy": "pnpm recursive run --if-present predeploy && ts-node --project tsconfig.node.json public-copy.ts",
-		"deploy": "gh-pages -d public"
-	},
-	"devDependencies": {
-		"@jmfrancois/eslint-config": "^1.0.0",
-		"@types/node": "^20.11.5",
-		"@types/glob": "^8.1.0",
-		"gh-pages": "^6.1.1",
-		"glob": "^10.3.10",
-		"prettier": "^3.1.0",
-		"prettier-plugin-tailwindcss": "^0.5.11",
-		"rimraf": "^5.0.5",
-		"ts-node": "^10.9.2",
-		"typescript": "^5.3.3"
-	},
-	"dependencies": {}
+  "name": "jmfrancois",
+  "private": true,
+  "engines": {
+    "pnpm": ">=8.0.0"
+  },
+  "scripts": {
+    "clean:build": "rimraf */*/build",
+    "postinstall": "pnpm recursive run --if-present build",
+    "lint": "pnpm recursive run --if-present lint",
+    "test": "pnpm recursive run --if-present test",
+    "predeploy": "pnpm recursive run --if-present predeploy && ts-node --project tsconfig.node.json public-copy.ts",
+    "deploy": "gh-pages -d public"
+  },
+  "devDependencies": {
+    "@jmfrancois/eslint-config": "^1.0.0",
+    "@types/node": "^20.11.5",
+    "@types/glob": "^8.1.0",
+    "gh-pages": "^6.1.1",
+    "glob": "^10.3.10",
+    "prettier": "^3.1.0",
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {}
 }
