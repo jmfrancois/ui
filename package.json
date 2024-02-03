@@ -5,6 +5,7 @@
     "pnpm": ">=8.0.0"
   },
   "scripts": {
+    "changeset": "changeset",
     "clean:build": "rimraf */*/build",
     "postinstall": "pnpm recursive run --if-present build",
     "lint": "pnpm recursive run --if-present lint",
@@ -13,6 +14,7 @@
     "deploy": "gh-pages -d public"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.27.1",
     "@jmfrancois/eslint-config": "^1.0.0",
     "@types/node": "^20.11.5",
     "@types/glob": "^8.1.0",
