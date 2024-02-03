@@ -19,27 +19,25 @@
     "react-hooks"
   ],
   "scripts": {
-    "predeploy": "react-scripts build && mv build demo",
-    "build": "babel -d lib ./src/useService.js",
-    "dev": "react-scripts start",
+    "predeploy": "vite build --outDir demo --base /ui/use-service",
+    "build": "tsc",
+    "dev": "vite dev",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
-    "test": "react-scripts test"
+    "test": "jest"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not op_mini all"
-  ],
   "devDependencies": {
-    "@babel/cli": "^7.23.4",
-    "@babel/core": "^7.23.4",
-    "@babel/preset-env": "^7.23.4",
     "@jmfrancois/eslint-config": "workspace:*",
+    "@vitejs/plugin-react": "^4.2.1",
+    "@types/react-test-renderer": "^18.0.7",
     "eslint": "^8.56.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
-    "react-test-renderer": "^18.2.0"
+    "react-test-renderer": "^18.2.0",
+    "ts-jest": "^29.1.2",
+    "vite": "^5.0.12"
   },
   "license": "Apache-2.0",
   "dependencies": {}

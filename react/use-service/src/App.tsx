@@ -1,15 +1,28 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from 'react'
+// eslint-disable @typescript-eslint/no-explicit-any
+import { useState, version } from 'react'
 import { registerService, useService } from './useService'
+import { Factory, NotifyFn, ServiceId } from './types'
+
+type LogInfo = {
+	info: (...args: string[]) => void
+}
 
 // services/log.js
 function $log() {
-	this.info = (...args) => console.info(...args)
+	this.info = (...args: string[]) => console.info(...args)
 }
 $log.$id = '$log'
+$log.dependencies = [] as ServiceId[]
+
+type Count = {
+	count: number
+	increment: () => void
+	decrement: () => void
+}
 
 // services/count.js
-function $count(notify, $log) {
+function $count(notify: NotifyFn, $log: LogInfo) {
 	this.count = 0
 	$log.info('create service#$count should be called only once')
 	this.increment = () => {
@@ -26,12 +39,16 @@ $count.$id = 'count'
 $count.dependencies = ['$log']
 
 // index.js
-registerService('$log', $log)
+registerService('$log', $log as Factory)
 registerService('$count', $count)
 
+type CounterProps = {
+	id: string
+}
+
 // components/Counter
-function Counter(props) {
-	const $count = useService('$count')
+function Counter(props: CounterProps) {
+	const $count = useService<Count>('$count')
 	console.log('Counter.render()', props.id)
 
 	return (
@@ -43,7 +60,7 @@ function Counter(props) {
 
 // components/CountController
 function CountController() {
-	const $count = useService('$count')
+	const $count = useService<Count>('$count')
 	console.log('CountController.render()')
 
 	return (
@@ -64,7 +81,7 @@ function App() {
 	const [show, setShow] = useState(true)
 	return (
 		<div className="App">
-			React.version = {React.version}
+			React.version = {version}
 			<Counter id="first" />
 			<CountController />
 			{show && <Counter id="second" />}
