@@ -12,7 +12,6 @@
     "assetto-corsa-app",
     "@jmfrancois/fuelcalc",
     "@jmfrancois/homepage",
-    "@jmfrancois/e2e-test",
-    "@jmfrancois/eslint-config"
+    "@jmfrancois/e2e-test"
   ]
 }
