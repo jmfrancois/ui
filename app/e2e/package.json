@@ -1,0 +1,15 @@
+{
+  "name": "@jmfrancois/e2e-test",
+  "description": "E2E test for all applications of the ui repository",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "playwright install",
+    "test:e2e": "playwright test",
+    "test:ui": "playwright test --ui"
+  },
+  "devDependencies": {
+    "@jmfrancois/eslint-config": "workspace:*",
+    "@playwright/test": "^1.41.2",
+    "eslint": "^8.56.0"
+  }
+}

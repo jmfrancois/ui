@@ -1,16 +1,16 @@
 {
-	"name": "@jmfrancois/homepage",
-	"private": true,
-	"version": "1.0.0",
-	"scripts": {
-		"dev": "ts-node serve.ts",
-		"lint": "eslint --ext .js,.ts,.tsx ."
-	},
-	"devDependencies": {
-		"@jmfrancois/eslint-config": "workspace:*",
-		"@types/node": "^20.11.5",
-		"eslint": "^8.56.0",
-		"ts-node": "^10.9.2",
-		"typescript": "^5.3.3"
-	}
+  "name": "@jmfrancois/homepage",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "ts-node serve.ts",
+    "lint": "eslint --ext .js,.ts,.tsx ."
+  },
+  "devDependencies": {
+    "@jmfrancois/eslint-config": "workspace:*",
+    "@types/node": "^20.11.5",
+    "eslint": "^8.56.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
 }
