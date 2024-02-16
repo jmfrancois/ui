@@ -4,12 +4,14 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "ts-node serve.ts",
+    "build:tailwind": "tailwindcss -i ./src/style.css -o ./src/tailwind.css --watch",
     "lint": "eslint --ext .js,.ts,.tsx ."
   },
   "devDependencies": {
     "@jmfrancois/eslint-config": "workspace:*",
     "@types/node": "^20.11.5",
     "eslint": "^8.56.0",
+    "tailwindcss": "^3.4.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   }
