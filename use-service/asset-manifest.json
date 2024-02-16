@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.css": "/ui/use-service/static/css/main.31d6cfe0.css",
+    "main.js": "/ui/use-service/static/js/main.d68bed8a.js",
+    "index.html": "/ui/use-service/index.html",
+    "main.d68bed8a.js.map": "/ui/use-service/static/js/main.d68bed8a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.d68bed8a.js"
+  ]
+}
