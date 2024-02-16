@@ -583,6 +583,10 @@ video {
   margin-right: auto;
 }
 
+.mr-4 {
+  margin-right: 1rem;
+}
+
 .flex {
   display: flex;
 }
@@ -607,20 +611,8 @@ video {
   width: 100%;
 }
 
-.basis-1\/2 {
-  flex-basis: 50%;
-}
-
-.basis-1 {
-  flex-basis: 0.25rem;
-}
-
 .list-none {
   list-style-type: none;
-}
-
-.flex-row {
-  flex-direction: row;
 }
 
 .flex-col {
