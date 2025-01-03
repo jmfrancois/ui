@@ -1,6 +1,7 @@
 {
   "name": "@jmfrancois/eslint-config",
   "version": "1.0.0",
+  "private": true,
   "main": "index.js",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^6.13.2",
