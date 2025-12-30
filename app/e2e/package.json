@@ -1,5 +1,6 @@
 {
   "name": "@jmfrancois/e2e-test",
+  "private": true,
   "description": "E2E test for all applications of the ui repository",
   "version": "1.0.0",
   "scripts": {
