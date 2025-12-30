@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@jmfrancois/eslint-config": "workspace:*",
-    "@playwright/test": "^1.41.2",
-    "eslint": "^8.56.0"
+    "@playwright/test": "^1.57.0",
+    "eslint": "^8.57.1"
   }
 }
