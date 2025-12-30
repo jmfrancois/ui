@@ -9,6 +9,7 @@
     "clean:build": "rimraf */*/build",
     "postinstall": "pnpm recursive run --if-present build",
     "release": "pnpm changeset publish",
+    "build": "pnpm recursive run --if-present build",
     "lint": "pnpm recursive run --if-present lint",
     "test": "pnpm recursive run --if-present test",
     "predeploy": "pnpm recursive run --if-present predeploy && ts-node --project tsconfig.node.json public-copy.ts",
