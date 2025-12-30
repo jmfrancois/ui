@@ -9,10 +9,10 @@ runs:
   steps:
     - uses: pnpm/action-setup@v2
       with:
-        version: 8
+        version: 10
 
     - name: Set up Node.js
-      uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d #v3.8.1
+      uses: actions/setup-node@v6
       with:
         node-version-file: '.tool-versions'
         registry-url: 'https://registry.npmjs.org/'
