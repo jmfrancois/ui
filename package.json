@@ -2,7 +2,7 @@
   "name": "jmfrancois",
   "private": true,
   "engines": {
-    "pnpm": "9.15.2"
+    "pnpm": "10.26.2"
   },
   "scripts": {
     "changeset": "changeset",
