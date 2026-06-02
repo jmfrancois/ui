@@ -1,9 +1,6 @@
 {
   "name": "jmfrancois",
   "private": true,
-  "engines": {
-    "pnpm": "10.26.2"
-  },
   "scripts": {
     "changeset": "changeset",
     "clean:build": "rimraf */*/build",
