@@ -6,7 +6,7 @@ class State {
 	raceLength: number
 	literPerLap: number
 	maxTank: number
-	onChange: () => void
+	onChange?: () => void
 	laps?: number
 	litersTotal?: number
 	pitstopRequired?: number
@@ -19,7 +19,6 @@ class State {
 		this.raceLength = 20 //minutes
 		this.literPerLap = 2.6
 		this.maxTank = 105 // capacity
-		this.onChange = () => {}
 		if (prev) {
 			this.setState = prev.setState
 			this.laptimeM = prev.laptimeM
@@ -46,7 +45,7 @@ class State {
 		if (!isNaN(v)) {
 			this[attr] = v
 			this.compute()
-			this.onChange()
+			this.onChange?.()
 		} else {
 			console.error(`Try to set ${attr} to a value which is not a number`)
 		}
