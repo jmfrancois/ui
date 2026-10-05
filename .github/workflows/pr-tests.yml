@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - name: Checkout sources
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 #v4.1.1
+        uses: actions/checkout@11bd71939f8652057e13ab704a14798669717533 #v4.2.2
 
       - name: Use Node.js
         uses: ./.github/actions/setup-node
