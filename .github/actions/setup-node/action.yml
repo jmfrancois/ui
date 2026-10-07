@@ -7,12 +7,12 @@ secrets:
 runs:
   using: 'composite'
   steps:
-    - uses: pnpm/action-setup@9582c75426f692964c57b8c0143841239566449 # v4.0.0
+    - uses: pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2 # v4.0.0
       with:
         version: 10
 
     - name: Set up Node.js
-      uses: actions/setup-node@1e60f620b954291f3b8c1942277c969252b4368e #v4.1.0
+      uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af #v4.1.0
       with:
         node-version-file: '.tool-versions'
         registry-url: 'https://registry.npmjs.org/'
