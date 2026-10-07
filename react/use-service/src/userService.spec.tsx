@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import * as TestRenderer from 'react-test-renderer'
-import { useService, registerService } from './useService'
+import { useService, registerService, getService } from './useService'
 import { Factory, NotifyFn } from './types'
 
 const { act } = TestRenderer
@@ -12,12 +11,13 @@ describe('useService.register', () => {
 			notify: NotifyFn
 		}
 		let instance: MyServiceType | undefined
+		// This function is intentionally used as a constructor by registerService.
+		/* oxlint-disable react/no-this-in-sfc */
 		function MyService(notify: NotifyFn) {
-			// eslint-disable-next-line @typescript-eslint/no-this-alias
-			instance = this
 			this.notify = notify
 			this.count = 0
 		}
+		/* oxlint-enable react/no-this-in-sfc */
 		registerService('My', MyService as Factory)
 		expect(instance).toBeUndefined()
 
@@ -26,6 +26,7 @@ describe('useService.register', () => {
 			return <p>{service.count}</p>
 		}
 		const wrapper = TestRenderer.create(<Component />)
+		instance = getService('My')
 		if (!instance) {
 			throw new Error('instance is undefined')
 		}

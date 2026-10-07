@@ -37,7 +37,5 @@ src
 babel.config.js
 .babelrc
 .editorconfig
-.eslintignore
-.eslintrc
 yarn.lock
 public

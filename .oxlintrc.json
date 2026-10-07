@@ -1,0 +1,21 @@
+{
+  "$schema": "https://oxc.rs/configuration_schema.json",
+  "plugins": ["import", "react"],
+  "env": {
+    "browser": true,
+    "es2020": true,
+    "jest": true,
+    "node": true
+  },
+  "ignorePatterns": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/demo/**",
+    "**/coverage/**"
+  ],
+  "rules": {
+    "react/immutability": "off",
+    "react/set-state-in-effect": "off"
+  }
+}

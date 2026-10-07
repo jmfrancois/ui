@@ -23,7 +23,6 @@ function initService<T>(id: ServiceId): T {
 		if (!factory) {
 			throw new Error(`No service found with the id ${id}`)
 		}
-		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 		// @ts-ignore
 		instance = new factory.fn(notify, ...factory.dependencies.map(initService))
 		services.set(id, instance)

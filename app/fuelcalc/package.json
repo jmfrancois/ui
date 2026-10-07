@@ -6,7 +6,7 @@
     "predeploy": "vite build --outDir demo --base /ui/fuelcalc",
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint --ext .js,.ts,.tsx .",
+    "lint": "oxlint .",
     "test:e2e": "playwright test",
     "preview": "vite preview"
   },
@@ -14,18 +14,14 @@
     "preact": "^10.29.2"
   },
   "devDependencies": {
-    "@jmfrancois/eslint-config": "workspace:*",
-    "@playwright/test": "^1.60.0",
-    "@preact/preset-vite": "^2.10.5",
+    "@playwright/test": "^1.47.0",
+    "@preact/preset-vite": "^2.10.6",
     "@tailwindcss/postcss": "^4.3.0",
-    "autoprefixer": "^10.5.0",
-    "eslint": "^8.57.1",
-    "postcss": "^8.5.15",
+    "autoprefixer": "^10.4.20",
+    "oxlint": "^1.0.0",
+    "postcss": "^8.5.4",
     "tailwindcss": "^4.3.0",
-    "typescript": "^5.9.3",
+    "typescript": "^5.6.3",
     "vite": "^6.4.2"
-  },
-  "eslintConfig": {
-    "extends": "preact"
   }
 }
