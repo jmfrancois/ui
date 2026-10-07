@@ -8,8 +8,6 @@
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
   "ignore": [
-    "assetto-corsa-manager",
-    "assetto-corsa-app",
     "@jmfrancois/fuelcalc",
     "@jmfrancois/homepage",
     "@jmfrancois/e2e-test"
