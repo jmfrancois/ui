@@ -1,4 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
+/* oxlint-disable react-hooks/exhaustive-deps */
 import React from 'react'
 import { IniInput } from './IniInput'
 import { getCurrentPreset } from './Preset'

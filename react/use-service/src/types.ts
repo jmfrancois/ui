@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type Service = any
 export type NotifyFn = () => void
 export type Factory = ((

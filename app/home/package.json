@@ -5,14 +5,13 @@
   "scripts": {
     "dev": "ts-node serve.ts",
     "build:tailwind": "tailwindcss -i ./src/style.css -o ./src/tailwind.css --watch",
-    "lint": "eslint --ext .js,.ts,.tsx ."
+    "lint": "oxlint ."
   },
   "devDependencies": {
-    "@jmfrancois/eslint-config": "workspace:*",
-    "@types/node": "^20.19.41",
-    "eslint": "^8.57.1",
-    "tailwindcss": "^3.4.19",
+    "@types/node": "^22.9.0",
+    "oxlint": "^1.0.0",
+    "tailwindcss": "^4.3.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
+    "typescript": "^5.6.3"
   }
 }
