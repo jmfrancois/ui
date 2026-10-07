@@ -31,7 +31,6 @@ root/
 ├── react/              # React component packages
 │   └── use-service/
 └── tooling/            # Tooling packages
-    ├── eslint-config/
     └── har-express/
 ```
 
@@ -75,7 +74,7 @@ root/
 ## Quality Assurance
 
 ### Linting
-- Uses custom ESLint config from `@jmfrancois/eslint-config`
+- Uses Oxlint for workspace linting
 - Run `pnpm lint` to check all packages
 
 ### Testing
@@ -110,6 +109,11 @@ root/
 
 ## Environment Requirements
 
+### Windows Development
+- **WSL Required**: On Windows systems, always use Windows Subsystem for Linux (WSL 2) for development
+- Run all commands and tooling within the WSL environment
+- Ensure WSL has access to the repository files
+
 ### Node.js
 - Version: 24.16.0 (as specified in .tool-versions)
 - Use nvm or similar for version management
@@ -131,12 +135,13 @@ root/
 
 ## Agent Instructions
 
-1. **Always use pnpm** - Do not use npm or yarn
-2. **Respect workspaces** - Update dependencies considering workspace constraints
-3. **Test changes** - Run lint and test scripts after dependency updates
-4. **Maintain compatibility** - Ensure updated packages work together
-5. **Document changes** - Include detailed commit messages and PR descriptions
-6. **Update in batches** - Group related dependency updates together
+1. **Use WSL on Windows** - On Windows, always operate within Windows Subsystem for Linux (WSL 2) environment
+2. **Always use pnpm** - Do not use npm or yarn
+3. **Respect workspaces** - Update dependencies considering workspace constraints
+4. **Test changes** - Run lint and test scripts after dependency updates
+5. **Maintain compatibility** - Ensure updated packages work together
+6. **Document changes** - Include detailed commit messages and PR descriptions
+7. **Update in batches** - Group related dependency updates together
 
 ## Exclusions
 

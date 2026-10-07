@@ -1,4 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
+/* oxlint-disable react-hooks/exhaustive-deps */
 import React from 'react'
 import { addCarInEntryList, deleteCarInEntryList, getEntryList } from './api'
 import { IniInput } from './IniInput'

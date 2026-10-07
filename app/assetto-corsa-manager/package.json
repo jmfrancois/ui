@@ -9,13 +9,12 @@
   },
   "scripts": {
     "test": "jest --passWithNoTests",
-    "lint": "eslint --ext .js,.ts,.tsx ."
+    "lint": "oxlint ."
   },
   "author": "Jean-Michel FRANCOIS",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
-    "@jmfrancois/eslint-config": "workspace:*",
-    "eslint": "^9.14.0"
+    "oxlint": "^1.0.0"
   },
   "dependencies": {
     "body-parser": "^2.2.0",

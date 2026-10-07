@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-// eslint-disable @typescript-eslint/no-explicit-any
 import { useState, version } from 'react'
 import { registerService, useService } from './useService'
 import { Factory, NotifyFn, ServiceId } from './types'

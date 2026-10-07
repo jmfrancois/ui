@@ -14,7 +14,7 @@ export function TrackConfig() {
 		return () => {
 			clearInterval(cancel)
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
+		// oxlint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 	const [iniConfig, setIniConfig] = React.useState()
 	React.useEffect(() => {
