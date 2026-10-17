@@ -25,7 +25,6 @@ root/
 ├── app/                # Application packages
 │   ├── assetto-corsa-app/
 │   ├── assetto-corsa-manager/
-│   ├── e2e/
 │   ├── fuelcalc/
 │   └── home/
 ├── react/              # React component packages
@@ -79,7 +78,6 @@ root/
 
 ### Testing
 - Jest for unit testing
-- Playwright for E2E testing
 - Run `pnpm test` to execute all tests
 
 ## Deployment
