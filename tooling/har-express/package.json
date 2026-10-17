@@ -4,8 +4,10 @@
   "description": "Use HAR file to create a mock server",
   "main": "index.js",
   "scripts": {
+    "build": "echo 'No build step required for har-express'",
     "test": "jest",
-    "lint": "oxlint ."
+    "lint": "oxlint .",
+    "predeploy": "echo 'No predeploy step for har-express'"
   },
   "author": "Jean-Michel FRANCOIS <toutpt@gmail.com>",
   "license": "Apache-2.0",
