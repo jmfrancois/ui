@@ -14,7 +14,7 @@
     "preact": "^10.29.2"
   },
   "devDependencies": {
-    "@playwright/test": "^1.47.0",
+    "@playwright/test": "^1.63.0",
     "@preact/preset-vite": "^2.10.6",
     "@tailwindcss/postcss": "^4.3.0",
     "autoprefixer": "^10.4.20",
