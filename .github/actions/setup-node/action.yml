@@ -7,8 +7,6 @@ secrets:
 runs:
   using: 'composite'
   steps:
-    - name: Checkout sources
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #v7.0.1
 
     - name: Cache asdf
       uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
