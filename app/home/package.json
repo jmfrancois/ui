@@ -4,13 +4,16 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "ts-node serve.ts",
+    "build": "echo 'Build complete - tailwind.css already generated'",
     "build:tailwind": "tailwindcss -i ./src/style.css -o ./src/tailwind.css --watch",
-    "lint": "oxlint ."
+    "lint": "oxlint .",
+    "test": "echo 'No unit tests configured'",
+    "predeploy": "pnpm run build"
   },
   "devDependencies": {
     "@types/node": "^22.9.0",
     "oxlint": "^1.0.0",
-    "tailwindcss": "^4.3.0",
+    "tailwindcss": "^4.3.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3"
   }

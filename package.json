@@ -1,28 +1,32 @@
 {
-  "name": "jmfrancois",
-  "private": true,
-  "scripts": {
-    "changeset": "changeset",
-    "clean:build": "rimraf */*/build",
-    "postinstall": "pnpm recursive run --if-present build",
-    "release": "pnpm changeset publish",
-    "build": "pnpm recursive run --if-present build",
-    "lint": "pnpm recursive run --if-present lint",
-    "test": "pnpm recursive run --if-present test",
-    "predeploy": "pnpm recursive run --if-present predeploy && ts-node --project tsconfig.node.json public-copy.ts",
-    "deploy": "gh-pages -d public"
-  },
-  "devDependencies": {
-    "@changesets/cli": "^2.31.1",
-    "@types/glob": "^8.1.0",
-    "@types/node": "^22.20.5",
-    "gh-pages": "^6.3.0",
-    "glob": "^11.1.0",
-    "oxlint": "^1.88.0",
-    "prettier": "^3.9.10",
-    "prettier-plugin-tailwindcss": "^0.6.14",
-    "rimraf": "^6.1.3",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
-  }
+    "name": "jmfrancois",
+    "private": true,
+    "packageManager": "pnpm@12.14.0",
+    "scripts": {
+        "changeset": "changeset",
+        "clean:build": "rimraf */*/build",
+        "release": "pnpm changeset publish",
+        "build": "turbo run build",
+        "lint": "turbo run lint",
+        "test": "turbo run test",
+        "predeploy": "turbo run predeploy && ts-node --project tsconfig.node.json public-copy.ts",
+        "deploy": "gh-pages -d public",
+        "dev": "turbo run dev --parallel",
+        "ci": "turbo run build lint test --continue",
+        "clean": "turbo run clean:build && rimraf public"
+    },
+    "devDependencies": {
+        "@changesets/cli": "^3.0.3",
+        "@types/glob": "^9.0.0",
+        "@types/node": "^26.6.5",
+        "gh-pages": "^6.3.0",
+        "glob": "^11.1.0",
+        "oxlint": "^1.88.0",
+        "prettier": "^3.9.10",
+        "prettier-plugin-tailwindcss": "^0.8.1",
+        "rimraf": "^6.1.3",
+        "ts-node": "^10.9.2",
+        "turbo": "^2.3.3",
+        "typescript": "^7.0.2"
+    }
 }
