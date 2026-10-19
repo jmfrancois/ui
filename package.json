@@ -1,7 +1,7 @@
 {
     "name": "jmfrancois",
     "private": true,
-    "packageManager": "pnpm@11.5.0",
+    "packageManager": "pnpm@12.14.0",
     "scripts": {
         "changeset": "changeset",
         "clean:build": "rimraf */*/build",
