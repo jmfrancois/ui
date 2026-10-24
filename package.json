@@ -9,7 +9,7 @@
         "build": "turbo run build",
         "lint": "turbo run lint",
         "test": "turbo run test",
-        "predeploy": "turbo run predeploy && ts-node --project tsconfig.node.json public-copy.ts",
+        "predeploy": "turbo run predeploy && node public-copy.ts",
         "deploy": "gh-pages -d public",
         "dev": "turbo run dev --parallel",
         "ci": "turbo run build lint test --continue",
@@ -25,7 +25,6 @@
         "prettier": "^3.9.10",
         "prettier-plugin-tailwindcss": "^0.8.1",
         "rimraf": "^6.1.3",
-        "ts-node": "^10.9.2",
         "turbo": "^2.3.3",
         "typescript": "^7.0.2"
     }
